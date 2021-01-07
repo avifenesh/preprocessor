@@ -84,8 +84,14 @@ int cleanComment(char file[]){
 	}/*while*/
 
  	/*close files and return*/
- 	fclose(fw);
- 	fclose(fr);
+	if(fclose(fw)!=0){
+		printf("there is a problem with closing the file! we must stop the program, sorry.\n");
+		return 0;
+	}/*if*/
+	if(fclose(fr)!=0){
+		printf("there is a problem with closing the file! we must stop the program, sorry.\n");
+		return 0;
+	}/*if*/
 
  	return 0;
 }/*methode*/

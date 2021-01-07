@@ -92,7 +92,10 @@ int includeFiles(char file1[]){
 							break;
 						fputc(ci, fw);
 						} /*while*/
-					fclose(fi);
+					if(fclose(fi)!=0){
+						printf("there is a problem with closing the file! we must stop the program, sorry.\n");
+						return 0;
+					}/*if*/
 					state = OUT;
 					break;
 
@@ -100,8 +103,14 @@ int includeFiles(char file1[]){
 
 		}/*while*/
 
-	fclose(fw);
-	fclose(fr);
+	if(fclose(fw)!=0){
+		printf("there is a problem with closing the file! we must stop the program, sorry.\n");
+		return 0;
+	}/*if*/
+	if(fclose(fr)!=0){
+		printf("there is a problem with closing the file! we must stop the program, sorry.\n");
+		return 0;
+	}/*if*/
 	return 0;
 
 }/*methode*/
