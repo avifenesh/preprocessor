@@ -12,4 +12,4 @@ make
 ./preprocessor
 ```
 
-It asks for a C file name (`.c`, up to 19 characters). It writes `<file>.c1` with the `/* */` comments removed, then `<file>.c2` with each `#include "file"` replaced by that file's contents.
+It asks for a C file name (`.c`, up to 18 characters). It writes `<file>.c1` with the `/* */` comments removed, then `<file>.c2` with each `#include "file"` replaced by that file's contents.
